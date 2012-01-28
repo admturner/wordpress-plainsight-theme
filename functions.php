@@ -807,13 +807,12 @@ function ps_recent_notes_stream( $args ) {
 			}
 		}
 		
-		if ( ! empty( $note_data ) ) {
-			// print_r($include_pages);
+		if ( ! empty( $include_pages ) ) {
 			// This function is defined by the plugin at: /wp-content/plugins/plainsight-notes/plainsightnotes-public.php
 			psn_recent_notes(array( 'howmany' => $howmany, 'excerpt' => 1, 'include_pages' => $include_pages, 'order' => 'DESC' ));
-		}
-		
-		?>
+		} else {
+			echo '<p>No classroom ideas posted yet. Try checking back after completing a module.</p>';
+		} ?>
 		
 		<p><a href="<?php bloginfo('url'); ?>/notes/">See all classroom notes &gt;&gt;</a></p>
 	</div><!-- .<?php echo $wrap_class; ?> --><?php
