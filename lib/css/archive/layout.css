@@ -1,0 +1,134 @@
+/* ------------------------------------------------------------
+LAYOUT
+------------------------------------------------------------ */
+/* ====== Header ====== */
+#header-wrap {
+	background: url('images/backgrounds/header.jpg') bottom repeat-x;
+	border-bottom: 1px solid #90acd4;
+	float: left;
+	width: 100%;
+}
+.header-utility {
+	margin-bottom: -18px; width: 100%;
+}
+#masthead {
+	margin: 0 auto; width: 960px;
+}
+
+/* ====== Pages & Singles ====== */
+#content-overlord {
+	clear: both;
+	margin: 0 auto; width: 960px;
+}
+
+/* ------ 2-Column Layout ------ */
+#content {
+	float: left;
+	margin: 18px 20px 18px 0; width: 620px;
+}
+#content-sidebar {
+	float: left;
+	margin: 30px 0 24px; width: 320px;
+}
+#content-sidebar form {
+	margin-bottom: 36px; width: 320px;
+}
+
+/* ------ 1-Column Layout (no sidebar) ------ */
+#content.one-column-full {
+	margin-top: 48px; width: 960px;
+}
+
+/* ------ Front Page ------ */
+.home #entry-content {
+	float: left; clear: both;
+	width: 700px;
+}
+.ruled-box {
+	background: transparent url('images/vertical-rule.gif') center top repeat-y;
+}
+#site-tools {
+	background: #7893c0;
+	border: 1px solid #dadada; border-radius: 12px;
+		-moz-border-radius: 12px; -khtml-border-radius: 12px; -o-border-radius: 12px; -ms-border-radius: 12px;
+	float: right;
+	margin-top: -20px; padding: 20px 10px 0 20px; width: 210px; height: 340px;
+}
+	
+/* Thumbs grid home page */
+#thumb-container {
+	float: left;
+	margin-bottom: 42px; width: 700px;
+}
+
+/* ------ Mid-bottom left ------ */
+.one-column-full #mid-bottom-left {
+	float: left;
+	border-top: 1px dotted #b2574c; margin-right: 20px; width: 370px;
+}
+
+/* ------ Mid-bottom right------ */
+.one-column-full #mid-bottom-right {
+	float: left;
+	border-top: 1px dotted #b2574c; width: 300px;
+}
+
+/* ------ Module page Instructions ------ */
+.widget-area .instructions {
+	background: #7893c0;
+	border: 1px solid #dadada; border-radius: 12px;
+		-moz-border-radius: 12px; -khtml-border-radius: 12px; -o-border-radius: 12px; -ms-border-radius: 12px;
+	margin: -12px 0px 24px 0; padding: 6px 0 12px; width: 320px;
+}
+
+/* ------ Single Posts ------ */
+#content-overlord #comments {
+	clear: both; overflow: hidden;
+	width: 720px;
+}
+
+/* ====== Footer ====== */
+#footer {
+	background: url('images/backgrounds/footer.jpg') repeat;
+	border-top: 1px solid #c1d1e7; border-bottom: 1px solid #a8bede; margin-top: 18px; width: 100%;
+	clear: both; float: left;
+}
+
+#footer #supplementary {
+	margin: 0 auto; width: 960px;
+}
+
+#footer #contentinfo {
+	clear: both; overflow: hidden;
+	border-top: 1px solid #a8bede; width: 100%;
+}
+
+#footer #supplementary .footer-column {
+	float: left;
+	margin: 0 10px 18px 0;
+}
+
+.footer-widget-left {
+	width: 220px;
+}
+
+.footer-widget-midleft {
+	width: 220px;
+}
+
+.footer-widget-midright {
+	float: left;
+	margin-left: 120px; width: 380px;	
+}
+
+/*
+ul#menu-module-nav {
+	width: 220px;
+}
+
+ul#menu-module-nav li {
+	display: block; 
+	float: left;
+	width: 100px;
+	margin-right: 0px;}
+*/

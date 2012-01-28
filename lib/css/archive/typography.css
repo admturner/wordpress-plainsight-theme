@@ -1,0 +1,125 @@
+/* ====== Headings and Typography ====== */
+
+/* [line height] = 18 ÷ [font size] */
+h1, h2, h3, h4 {
+	color: #6782b0;
+}
+h1 {
+	font: 3.4em/1em Cardo, Baskerville, 'Book Antiqua', 'Hoefler Text', Garamond, Georgia, serif;
+	margin: 0 0 1em;
+}
+h2 {
+	font: 2.8em/1.285715em 'Cardo', Baskerville, 'Book Antiqua', 'Hoefler Text', Garamond, Georgia, serif; letter-spacing: .5px;
+	margin: 0.964286em 0 0.321429em;
+}
+h3 {
+	font: italic 2.1em/0.857143em 'Cardo', Baskerville, 'Book Antiqua', 'Hoefler Text', Garamond, Georgia, serif;
+	margin: .57143em 0 .28571em;
+}
+h4 {
+	font: 1.7em/1.058824em Cantarell, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+	margin: 1.058824em 0 0.529412em;
+}
+h5, h6 {
+	color: #89a4d0; font: 1em/1.384615em Cantarell, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif; letter-spacing: 1.5px; text-transform: uppercase;
+	margin: 0.92307em 0 0.46153em;
+}
+p {
+	font: 1.5em/1.7em 'Cardo', Baskerville, 'Book Antiqua', 'Hoefler Text', Garamond, Georgia, serif;
+	margin-bottom: 1.5em;
+}
+pre, code {
+	font: 14px/12.857px Consolas, 'Lucida Console', Monaco, monospace;
+}
+blockquote p {
+	border-left: 1px solid #973428; margin: 9px 12px; padding-left: 12px;
+	color: #a84539; font-style: italic;
+}
+blockquote cite {
+	font: italic 1.2em/1.75em Cantarell, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif; text-align: right;
+	display: block; margin: -.9em 1.2em .9em 0;
+}
+em, i, cite {
+	font-style: italic;
+}
+strong, b {
+	font-weight: 900;
+}
+small {
+	font-size: .8em; line-height: .8em;
+}
+br {
+	font-size: 1.4em; line-height: 1.2857em;
+}
+sup {
+	font-size: 12px; line-height: 15px; vertical-align: top;
+}
+
+/* ------ Page titles ------ */
+.page-template-page-onecolumn-php h1.pagetitle {
+	margin-top: 18px; text-align: center;
+}
+h1.pagetitle a {
+	font-size: 14px;
+}
+
+/* ------ Widget area ------ */
+.widget-area .instructions h4 {
+	color: #fff; font-style: normal; text-align: center;
+	border-right: 10px solid #a84539; border-left: 10px solid #a84539; margin: 12px 0 18px; padding:6px 0;
+}
+.widget-area .instructions p, .instructions h4, .vcard, .regis-info p, #footer p {
+	font-family: Cantarell, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+.widget-area .instructions p {
+	color: #fff; font-size: 1.4em; line-height: 1.2857em;
+	margin: 0 12px 12px;
+}
+
+/* ------ Footer ------ */
+#footer #supplementary h5 {
+	color: #fefefe; font: 1.5em/1.2em 'Cardo', Baskerville, 'Book Antiqua', 'Hoefler Text', Garamond, Georgia, serif; text-transform: none;
+}
+#footer #contentinfo p {
+	font-size: 1em; line-height: 1.8em; text-align: right;
+	margin: 14px auto 22px; width: 960px;
+}
+#footer #contentinfo p .wp-power {
+	display: block;
+}
+#footer #supplementary .textwidget p {
+	font-size: 1.2em; line-height: 1.5em;
+	margin-bottom: 1.5em;
+}
+#footer #supplementary ul li {
+	margin-bottom: 3px;
+	font: 1.2em/1.5em Cantarell, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+
+.edit-link {
+	clear: both; display: block;
+}
+.more {
+	color: #6782b0;
+}	
+.regis-info p {
+	font-size: 10px; line-height: 12px;
+}
+p.footnote-text {
+	font-size: 1.2em; line-height: 1.7em;
+}
+#content.one-column-full p {
+	line-height: 2;
+}
+a:link .slide-helper, a:visited .slide-helper {
+	background: #333;
+	background: rgba(0, 0, 0, 0.6);
+	border-radius: 12px 0 0 0;
+		-webkit-border-radius: 12px 0 0 0; -moz-border-radius: 12px 0 0 0; -o-border-radius: 12px 0 0 0; -ms-border-radius: 12px 0 0 0;
+	color: white; font: 12px/15px Cantarell, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif; text-align: center;
+	float: right; position: relative; left: 0; top: -30px;
+	padding: 4.5px 0; width: 100px;
+}
+a:hover .slide-helper, a:active .slide-helper {
+	background: #6782b0;
+}

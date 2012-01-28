@@ -1,0 +1,138 @@
+/* ====== Comments ====== */
+/* ------ Comment Box ------ */
+#comments #comments-title {
+	background: url('images/comment-fold.png') bottom left no-repeat;
+	margin: 0;
+	padding: 0 0 9px 30px;
+}
+#comments ol.commentlist {
+	background: #b4d4ff;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+		-moz-border-radius: 0 3px 3px 0;
+		-o-border-radius: 0 3px 3px 0;
+	border-top: 6px solid #81b6ff;
+	border-right: 6px solid #81b6ff;
+	border-bottom: 6px solid #81b6ff;
+	box-shadow: 2px 2px 8px #c3c3c3;
+		-webkit-box-shadow: 2px 2px 8px #c3c3c3;
+		-moz-box-shadow: 2px 2px 8px #c3c3c3;
+		-khmtl-box-shadow: 2px 2px 8px #c3c3c3;
+		-o-box-shadow: 2px 2px 8px #c3c3c3;
+	margin: 0 12px 0 0;
+}
+/* ------ Individual Comments ------ */
+#comments ol.commentlist li.comment {			
+	background: #e7f1ff;
+	border: 1px solid #81b6ff;
+	border-radius: 3px;
+		-moz-border-radius: 3px;
+		-khtml-border-radius: 3px;
+		-o-border-radius: 3px;
+	margin: 9px 12px;
+	overflow: hidden;
+}
+#comments ol.commentlist li.bypostauthor {
+	background: #f1febd;
+	border: 1px solid #bb0;
+}
+/* Different background color for comments by post author */
+#comments li.comment .comment-author {
+	font-size: 1.2em;
+	float: left;
+	margin: 9px 0 -9px 12px;
+	width: 366px;
+}
+/* Gravatar image border for comments by instructor */
+#comments ol.commentlist li.comment-author-swhelan .comment-author img {
+	border: 2px solid #9ab243;
+}
+	#comments ol.commentlist li.comment-author-swhelan ul.children .comment-author img {
+		border: none;
+	}
+#comments li.comment .comment-author cite {
+	font-style: normal;
+}
+#comments li.comment .comment-author img {
+	float: left;
+	height: 40px;
+	width: 40px;
+}
+#comments li.comment .comment-meta {
+	float: right;
+	font-size: .8em;
+	margin: 9px 12px 0 0;
+	text-align: right;
+	width: 216px;
+}
+#comments li.comment .comment-body {
+	clear: both;
+	display: block;
+	margin: 0 12px 9px 64px;
+}
+#comments li.comment .comment-body p {
+	font-size: inherit;
+	line-height: inherit;
+	margin: 0;
+}
+#comments li.comment .reply {
+	display: block;
+	font-size: .9em;
+	margin: 0 24px 21px 0;
+	text-align: right;
+}
+/* A response to a comment */
+#comments li.comment ul.children {
+	font-size: inherit;
+}
+/* Comment body html tag formatting */
+#comments li.comment .comment-body blockquote {
+	background: rgba(255,255,255,0.5);
+	padding-bottom: 9px;
+}
+
+/* ------ Response Form ------ */
+#comments #respond {
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #b1bfd2;
+	border-bottom: 2px solid #b1bfd2;
+	border-left: 1px solid #b1bfd2;
+	margin: 0 12px 0 12px;
+	overflow: hidden;
+	width: 678px;
+}
+#respond #reply-title {
+	border-bottom: 1px solid #b1bfd2;
+	font-size: 2em;
+	margin: 24px 12px;
+	padding: 4px 0;
+}
+#respond #commentform {
+	margin: 0 12px;
+}
+#respond .logged-in-as {
+	color: #555;
+	font-size: 1.2em;
+}
+#respond .comment-form-comment label {
+	color: #5e5e5e;
+	display: block;
+	font-size: .9em;
+}
+#respond .comment-form-comment textarea {
+	border: 2px solid #e5e5e5;
+	font-size: 1.2em;
+	line-height: 1.5em;
+	width: 648px;
+}
+#respond .form-allowed-tags {
+	font-size: 1.2em;
+}
+#respond .form-allowed-tags {
+	color: #666;
+}
+#respond .form-allowed-tags code {
+	background: transparent;
+	color: #666;
+	line-height: 1em;
+}

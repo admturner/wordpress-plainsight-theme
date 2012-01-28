@@ -1,0 +1,225 @@
+/* ------------------------------------------------------------
+PAGE STYLES and ELEMENTS
+------------------------------------------------------------ */
+/* #content-overlord #page-navigation {
+	clear: both;
+	overflow: hidden;
+} */
+
+/* ====== Module Splash Page ====== */
+#content #module-splash-nav ul {	
+	margin: 0;
+}
+#module-splash-nav ul li {
+	float: left;
+	list-style-type: none;
+}
+#module-splash-nav img {
+	width: 140px; height: 140px;
+}
+#module-splash-nav ul li a {
+	border: 5px solid #a7a596; width: 140px; height: 140px; margin: 9px 10px 0 0px;
+	float: left;
+}
+#module-splash-nav ul li a:hover {
+	border: 5px solid #a84539;
+}
+
+
+
+
+/* ====== Syllabus page ===== */
+span.big {
+	display: block; 
+	font-size: 60px;
+	color: #b2574c;
+	width: 60px;
+	padding-left: 60px;
+	line-height: 60px;
+	font-style: normal;
+}
+
+.credit-info {
+	border-bottom: 1px dotted #973428;
+	border-top: 1px dotted #973428;
+	margin-top: 12px;
+	width: 240px; 
+	padding-left: 40px;
+}
+.credit-info p {
+	font-style: italic;
+	color: #b2574c; 
+	text-align: center;
+}
+
+
+
+
+/* ====== Slideshow (Behind the Object pages) ====== */
+#slide-container {
+	float: left;
+	width: 580px;
+}
+#slide-container img {
+	width: 580px; height: 358px; margin: 0 0 2px 0;
+}
+#module-slideshow #slide-container a {
+	outline: none;
+}
+/* ---- Slideshow navigation (the JQuery toggles) ---- */
+#content-sidebar #slideshow-nav #slide-toggler {
+	margin: 0;
+}
+#slideshow-nav #slide-toggler li {
+	float: left;
+	line-height: 0;
+	margin: 0 12px 9px 0;
+}
+/* hidden by default; JQuery removes this class to reveal */
+.one-column-full #module-slideshow .no-script {
+	display: none;
+}
+#slide-toggler li a:link img {
+	border: 5px solid #a84539; width: 54px; height: 54px;
+}
+#slide-toggler li a:visited img, #slide-toggler li.visited a img {
+	border: 5px solid #a7a596; width: 54px; height: 54px;
+}
+#slideshow-nav #slide-toggler li a:hover img, #slideshow-nav #slide-toggler li a:active img, #slideshow-nav #slide-toggler li a:focus img {
+	border: 5px solid #6782b0; outline: none;
+}
+#slide-toggler li.current_page_item a img {
+	border: 5px solid #6782b0; outline: none;
+}
+
+/* ------ Module page section wrap ------ */
+.section-wrap {
+	border: 1px solid #a7a596; border-radius: 6px;
+		-moz-border-radius: 6px; -webkit-border-radius: 6px; -o-border-radius: 6px; -ms-border-radius: 6px;
+	margin: 0 0 18px 0; padding: 18px 12px 0 12px;
+}
+.section-wrap h4 {
+	margin: .5833em 0;
+}
+
+/* ------ Section-wrapped Note display ------ */
+.note {
+	width: 100%; 
+}
+.note img.avatar {
+	border-radius: 2px;
+		-moz-border-radius: 2px; -webkit-border-radius: 2px; -o-border-radius: 2px; -ms-border-radius: 2px;
+	float: left;
+	width: 50px; height: 50px; margin: 0 12px 0 0;
+}
+.note-meta p {
+	color: #2d2b28;
+	margin: 0;
+}
+.note-meta p a:visited {
+	color: #2d2b28;
+}
+.note-meta p cite {
+	font-style: italic;
+}
+.note-meta abbr {
+	color: #e9a235; font-family: Cantarell, sans-serif; font-size: 9px; text-align: right; text-transform: uppercase;
+	float: right;
+	margin: 0 12px 0 0; width: 132px;	
+}
+h4.note-title {
+	display: block; float: left;
+	font-size: 1em; letter-spacing: 1.5px; text-transform: uppercase;
+	width: 388px;
+}
+.note-content {
+	clear: both;
+	width: 100%;
+	padding-top: 18px;
+}
+
+/* ------ Wrap-Up Page ------ */
+.all-module-notes .section-wrap {
+	overflow: hidden;
+}
+.all-module-notes .note {
+	margin: 0 12px 18px 0; padding: 9px 6px;
+	width: 578px;
+}
+.all-module-notes .note-meta {
+	margin: 6px 0 0;
+}
+.all-module-notes .note img {
+	margin: 0 12px 0 0;
+}
+.all-module-notes h4.note-title {
+	float: left;
+	width: 516px;
+	margin-bottom: 9px;
+}
+.all-module-notes h6.meta {
+	float: left;
+	margin: 0 0 9px 0; width: 372px;
+}
+
+.note.even {
+	background: #ffd;
+}
+
+
+
+
+/* ====== Single Posts ====== */
+#content .entry-utility {
+	clear: both;
+	display: block;
+	width: 100%;
+}
+
+#content #nav-below {
+	overflow: hidden;
+}
+
+#content #nav-above li, #content #nav-below li.nav-previous {
+	float: left;
+	margin: 9px 12px;
+	width: 315px;
+}
+
+#content #nav-above li, #content #nav-below li.nav-next {
+	float: right;
+	margin: 9px 12px;
+	text-align: right;
+	width: 315px;
+}
+
+/* ------ Single post sidebar ------ */
+#content-sidebar ul.navigation {
+	font-size: inherit;
+	line-height: inherit;
+	margin: 24px 12px;
+}
+
+/* ------ Connections essay attribution ------ */
+.author-info {
+	border: 1px solid #a7a596; border-radius: 6px;
+		-moz-border-radius: 6px; -webkit-border-radius: 6px; -o-border-radius: 6px; -ms-border-radius: 6px;
+	padding: 12px 12px 6px; width: 320px;
+}
+.author-info img {
+	background: white;
+	float: left;
+	margin-right: 12px; padding: 6px; width: 88px; height: 88px;
+}
+.author-info br {
+	display: none;
+}
+
+#entry-author-info #author-avatar, #entry-author-info #author-description {
+	margin: 0 12px 24px 12px;
+}
+
+#entry-author-info #author-link {
+	display: block;
+	text-align: right;
+}

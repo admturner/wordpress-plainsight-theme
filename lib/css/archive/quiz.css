@@ -1,0 +1,45 @@
+/* ------ Quiz Styles ------ */
+/* #quiz-wrap p {
+	color: #777;
+	margin: 21px 12px;
+}
+.quiz-area {
+	font: 1.4em/1.5em Cantarell, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+	margin: 0 12px;
+}
+.question-content {
+	font-weight: bold;
+}
+.show-question-content {
+	font: 1.4em/1.5em Cantarell, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+.quiz-area label {
+	display: block;
+	float: left;
+	margin: -2px 40px 22px 6px;
+	width: 600px;
+}
+.quiz-area input.answer {
+	display: block;
+	float: left;
+	width: 12px;
+} */
+
+.show-question-content {
+	font: bold 14px Georgia, serif;
+	color: #e94325;
+}
+
+.show-question ul {
+	list-style-type: none;
+	margin-left: 1em;
+}
+
+	.show-question ul li {
+		margin-bottom: 6px;
+	}
+
+.quiz-area #next-question, .quiz-area #action-button {
+	float: left;
+	margin: -12px 0 21px 0;
+}

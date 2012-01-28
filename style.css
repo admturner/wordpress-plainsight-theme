@@ -1,0 +1,1133 @@
+/*!
+Theme Name: Plain Sight
+Theme URI: http://chnm.gmu.edu/
+Description: A theme for online courses created and run by the Roy Rosenzweig Center for History and New Media, at George Mason University. Initially adapted from the default TwentyTen theme, and, since version 2.0, modified to run as a child theme to TwentyEleven.
+Author: Chris Raymond and Adam Turner
+Author URI: http://www.designtank.ws
+Template: twentyeleven
+Version: 2.0
+Tags: custom-menu, editor-style, theme-options, threaded-comments, sticky-post, microformats, rtl-language-support, translation-ready
+*/
+
+/*!
+The CSS, XHTML and design is released under GPL:
+http://www.opensource.org/licenses/gpl-license.php
+For a human-readable version:
+@see http://chnm.gmu.edu/hiddeninplainsight/spring2012/wp-content/themes/plainsight/style_human-readable.css
+*/
+
+/*
+=== Contents ===
+ * Imports
+ * Baselines
+ * Typography
+ * Standard Links
+ * Static Lists
+ * Utility Classes
+ * Images
+ * Layout
+ * Elements
+ * Pages and Singles
+
+=== Swatch Colors ===
+Color 1	#0099cc (blue [link color])
+Color 1	#e94235 (red-orange [link hover color)
+Text		#2d2b28 (brown-gray, very dark [body, p])
+Neutrals	#eaeaea (header-footer border color)
+			#a0a7ae (bluish gray)
+			#787f86 (darker gray)
+
+=== Grid ===
+Width = 960px, 10px margin left and right 
+16 Columns @ 40 pixels wide totaling 940, each has margin-right of 10px, based on 960gs
+	40 | 100 | 160 | 220 | 280 | 340 | 400 | 460 | 520 | 580 | 640 | 700 | 760 | 820 | 880 | 940
+*/
+
+/* ------------------------------------------------------------
+Imports
+------------------------------------------------------------ */
+@import url('lib/css/reset.css');
+@import url('http://fonts.googleapis.com/css?family=Nobile:regular, italic, bold, bolditalic&subset=latin');
+@import url('http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular, italic&subset=latin');
+
+/* ------------------------------------------------------------
+Baselines
+------------------------------------------------------------ */
+body, html {
+	min-height: 101%;
+}
+body {
+	color: #333; font-size: 62.5%; line-height:1.8; /* makes body 10px size, on 18px line-height */
+}
+html>body {
+	font-size: 10px; /*this is ignored by IE6 but targets FF, IE7, Safari, etc., which allow text sized in pixels to be resized */
+}
+/* ------------------------------------------------------------
+Typography
+------------------------------------------------------------ */
+h1 {
+	color: #09c; font: 3.4em/1em 'OFL Sorts Mill Goudy TT', Baskerville, 'Book Antiqua', 'Hoefler Text', Garamond, Georgia, serif;
+	margin: 0 0 1em;
+}
+h2 {
+	font: 2.8em/1.285715em 'OFL Sorts Mill Goudy TT', Baskerville, 'Book Antiqua', 'Hoefler Text', Garamond, Georgia, serif; letter-spacing: .5px;
+	margin: 0.964286em 0 0.321429em;
+}
+h3 {
+	font: italic 2.1em/0.857143em 'OFL Sorts Mill Goudy TT', Baskerville, 'Book Antiqua', 'Hoefler Text', Garamond, Georgia, serif;
+	margin: .57143em 0 .28571em;
+}
+h4, #comments-title, .note-title {
+	font: 1.7em/1.058824em Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+	margin: 1.058824em 0 0.529412em;
+}
+h5, h6, #author-extra p {
+	font: 1.3em/1.384615em Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+	margin:.92307em 0 .46153em;
+}
+h2, h3, h4 {
+	color: #787f86;
+}
+h5, h6, .note-sub {
+	color: #e94235; font-size: 1em; letter-spacing: 1.5px; text-transform: uppercase;
+}
+p {
+	font: 1.5em/1.7em 'OFL Sorts Mill Goudy TT', Baskerville, 'Book Antiqua', 'Hoefler Text', Garamond, Georgia, serif;
+	margin-bottom: 1.25em;
+}
+pre, code {
+	font: 14px/12.857px Consolas, 'Lucida Console', Monaco, monospace;
+}
+blockquote {
+	background: #fff;
+ 	overflow: hidden;
+}
+blockquote p {
+	border-left: 1px solid #09c; margin: 9px 12px; padding-left: 12px;
+	color: #e94235; font-style: italic;
+}
+blockquote cite {
+	display: block;
+	font: italic 1.2em/1.75em Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif; text-align: right;
+	margin: -.9em 1.2em .9em 0;	
+}
+em, i, cite {
+	font-style: italic;
+}
+strong, b {
+	font-weight: 900;
+}
+small {
+	font-size: .8em; line-height: .8em;
+}
+br {
+	font-size: 1.4em; line-height: 1.2857em;
+}
+sup {
+	font-size: 12px; line-height: 15px; vertical-align: top;
+}
+.more {
+	color: #09c;
+}
+#content.one-column-full p, #content.one-column-standard p {
+	line-height: 2;
+}
+/* ------ Page titles ------ */
+.page-template-page-onecolumn-php .pagetitle, .page-template-page-narrowcolumn-php .pagetitle {
+	margin-top: 18px;
+	text-align: center;
+}
+.home .pagetitle {
+	text-align: left;
+}
+.pagetitle a {
+	font-size: 14px;
+}
+/* ------ Widget area ------ */
+.widget-area .instructions h4 {
+	color: #fff; font-style: normal; text-align: center;
+	border-right: 10px solid #e94235; border-left: 10px solid #e94235; margin: 12px 0 18px; padding: 6px 0;
+}
+.widget-area .instructions p, .instructions h4, .vcard p, .regis-info p, #footer p {
+	font-family: Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+.widget-area .instructions p {
+	color: #fff; font-size: 1.2em; line-height: 1.5em;
+	margin: 0 12px 12px;
+}
+.instructions p a:link, .instructions p a:visited {
+	color: #fff; text-decoration: underline;
+}
+.instructions h5 {
+	margin-left: 12px;
+}
+/* ------ Footer ------ */
+#footer #supplementary h5 {
+	font: 1.5em/1.2em 'OFL Sorts Mill Goudy TT', Baskerville, 'Book Antiqua', 'Hoefler Text', Garamond, Georgia, serif; text-transform: none;
+}
+#footer #contentinfo p {
+	display: block;
+	font-size: 1em; line-height: 1.75em; text-align: right;
+	margin: 0 auto 21px; width: 960px;
+}
+#footer #contentinfo p .wp-power {
+	display: block;
+}
+#footer #supplementary .textwidget p {
+	color: #787f86; font-size: 1.2em; line-height: 1.5em;
+}
+#footer-widgetarea .textwidget h6 {
+	color: #787f86; letter-spacing: 0; text-transform: none;
+	margin: 0 0 6px 0;
+}
+p.footnote-text {
+	font-size: 1.2em; line-height: 1.7em;
+}
+#footer ul li {
+	font: 1em/1.8 Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+/* ------------------------------------------------------------
+Standard Links
+------------------------------------------------------------ */
+a:link {
+	color: #09c; text-decoration: none;
+}
+a:visited {
+	color: #787f86; text-decoration: none;
+}
+p a:visited {
+	color: #a0a7ae;
+}
+a:hover, a:focus, p a:hover {
+	color: #e94235;
+}
+a:active {
+	color: #ccc;
+}
+#entry-content a {
+	word-wrap: break-word;
+}
+#post a:link {
+	border-bottom: 1px solid #b4ced4;
+}
+#post a:hover, #post a:focus {
+	border-bottom: 1px solid #e94235;
+}
+#post a:active {
+	border-bottom: 1px solid #eee;
+}
+.header-utility-wrap a:link, .header-utility-wrap a:visited {
+	color: #000;
+}
+/* ------------------------------------------------------------
+Static Lists
+------------------------------------------------------------ */
+ul li, dl dt, dl dd {
+	font: 1.5em/1.6em 'OFL Sorts Mill Goudy TT', Baskerville, 'Book Antiqua', 'Hoefler Text', Garamond, Georgia, serif;
+}
+.menu-primary-navigation-container li {
+	display: inline;
+	font-size: 10px;	
+}
+ol li {
+	font-size: 18px; font-family: 'OFL Sorts Mill Goudy TT', Baskerville, 'Book Antiqua', 'Hoefler Text', Garamond, Georgia, serif; 
+}
+ol li p {
+	color: #000; font-size: 15px;	line-height: 30px;
+}
+#content ul {
+	list-style-type: disc;
+	margin: 0 0 2.1em 2.1em;
+}
+#content ul.no-bullet {
+	list-style-type: none;
+	margin-left: 0;
+}
+#content ol {
+	list-style-type: decimal;
+	margin: 0 0 2.1em 2.1em;
+}
+#content dl {
+	margin: 0 0 2.1em 2.1em;
+}
+#content dl dt {
+	font-weight: bold;
+}
+#content dl dd {
+	margin: 0 0 0 1em;
+}
+ul ul, ol ol, ul ol, ol ul {
+	margin-bottom: 0;
+}
+ul ul li, ul ol li, ol ol li, ol ul li {
+	font-size: inherit; line-height: inherit;
+}
+ul.col {
+	float: left;
+	width: 220px;
+}
+/* ------------------------------------------------------------
+Utility Classes
+------------------------------------------------------------ */
+.textcenter {
+	text-align: center;
+}
+.alignleft {
+	float: left; text-align: left;
+}
+.alignright {
+	float: right; text-align: right;
+}
+.third {
+	float: left;
+	margin-right: 3%; width: 30%;
+}
+.hidden {
+	display: none;
+}
+/* ------------------------------------------------------------
+Images
+------------------------------------------------------------ */
+#content img.alignleft {
+	float: left;
+	margin: 21px 12px 0 0;
+}
+#content img.alignright {
+	float: right;
+	margin: 21px 0 0 12px;
+}
+#content img.aligncenter {
+	clear: both; display: block;
+	margin: 0 auto;
+}
+#content img.alignnone {
+	clear: both;
+	margin: 21px 0;
+}
+#content img.size-medium {
+	width: 324px; max-height: 324px;
+}
+#content img.size-large {
+	width: 640px; max-height: 640px;
+}
+#content img.size-full {
+	max-width: 936px; max-height: 936px;
+}
+/* ------ Gallery Images ------ */
+#content .gallery {
+	display: block; overflow: hidden;
+	margin: 0 auto;
+}
+#content .gallery .gallery-item {
+	display: inline; float: left;
+	margin: 9px 6px;
+	text-align: center;
+}
+/* ------------------------------------------------------------
+LAYOUT
+------------------------------------------------------------ */
+/* ====== Header ====== */
+#header-wrap {
+	background: #fff;
+	border-bottom: 1px solid #eaeaea; width: 100%;
+	float: left;
+}
+.header-utility {
+	background:  transparent url('images/backgrounds/header.png') repeat-x scroll left bottom;
+	float: left;
+	width: 100%;
+}
+#masthead {
+	margin: 0 auto; width: 960px;
+}
+/* ====== Pages & Singles ====== */
+#content-overlord {
+	clear: both;
+	margin: 0 auto; width: 960px;
+}
+/* ------ 2-Column Layout ------ */
+#content {
+	float: left;
+	margin: 48px 20px 24px 0; width: 620px;
+}
+#content-sidebar {
+	float: left;
+	margin: 60px 0 24px; width: 300px;
+}
+#content-sidebar form {
+	margin-bottom: 36px; width: 320px;
+}
+/* ------ 1-column, Standard width (no sidebar) ------*/
+#content.one-column-standard {
+	margin: 18px 0 0 160px; width: 640px;
+}
+/* ------ 1-Column, Full width (no sidebar) ------ */
+#content.one-column-full {
+	width: 960px;
+}
+/* ====== Footer ====== */
+#footer {
+	background: #fff;
+	border-top: 2px solid #eaeaea; width: 100%;
+	clear: both; float: left;
+}
+#footer #supplementary {
+	margin: 0 auto; width: 960px;
+}
+#footer #contentinfo {
+	border-top: 1px solid #eaeaea; width: 100%;
+	clear: both; overflow: hidden;
+}
+#footer #supplementary .footer-column {
+	float: left;
+	margin: 0 10px 18px 0;
+}
+.footer-widget-left {
+	width: 220px;
+}
+.footer-widget-midleft {
+	width: 220px;
+}
+.footer-widget-midright {
+	float: left;
+	margin-left: 120px; width: 380px;	
+}
+#menu-module-nav {
+	width: 220px;
+}
+#menu-module-nav li {
+	display: block; float: left;
+	margin-right: 0; width: 100px;
+}
+/* ====== Front Page ====== */
+.home #entry-content {
+	float: left; clear: both;
+	width: 700px;
+}
+.ruled-box {
+	background: transparent url('images/backgrounds/vertical-rule.gif') center top repeat-y;
+}
+/* Front page site tools menu */
+#site-tools {
+	border: 1px solid #dadada; border-radius: 12px; margin-top: -20px; padding: 20px 10px 0 20px; width: 210px;
+		-moz-border-radius: 12px; -khtml-border-radius: 12px; -o-border-radius: 12px;
+	float: right;
+}
+#site-tools h4 {
+	color: #09c; line-height: 1.35em;
+	margin: 0 0 .65em;
+}
+#site-tools h5 {
+	color: #413d36; font-size: 1.2em; line-height: 1.5em;
+}
+#content #site-tools ul {
+	margin: 0 0 2.1em 0em;
+}
+#site-tools ul li {
+	color: #787f86; font: 1.2em/1.5em Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif; list-style-type: none;
+	margin-bottom: 3px;
+}
+#site-tools ul li a, #site-tools ul a:visited {
+	color: #787f86; font-weight: normal;
+}
+#site-tools ul li a:hover {
+	color: #e94325;
+}
+#site-tools .note p {
+	font-size: 14px; line-height: 18px;
+}
+
+/* Front page thumbs grid */
+#thumb-container {
+	float: left;
+	width: 700px;
+}
+/* ------ Mid-bottom left ------ */
+.one-column-full #mid-bottom-left {
+	border-top: 1px dotted #787f86; margin-right: 20px; width: 370px;
+	float: left;
+}
+/* ------ Mid-bottom right------ */
+.one-column-full #mid-bottom-right {
+	border-top: 1px dotted #787f86; width: 300px;
+	float: left;
+}
+/* ====== Module page Instructions ====== */
+.widget-area .instructions {
+	background: url('images/backgrounds/note-background-pattern.jpg') top left repeat-x;
+	border-radius: 12px; margin: -12px 0px 24px 0; padding: 6px 0 12px; width: 320px;
+		-moz-border-radius: 12px; -khtml-border-radius: 12px; -o-border-radius: 12px; -ms-border-radius: 12px;
+}
+/* ------------------------------------------------------------
+ELEMENTS
+------------------------------------------------------------ */
+/* ------ A button ------ */
+#respond .form-submit #submit, input.button-primary, .quiz-form #next-question, .quiz-form #action-button, #searchform input#searchsubmit, #save-note {
+	background: linear-gradient(top, #ee6d63, #e94249);
+		background: -webkit-linear-gradient(top, #ee6d63, #e94249); background: -moz-linear-gradient(top, #ee6d63, #e94249); background: -o-linear-gradient(top, #ee6d63, #e94249); background: -ms-linear-gradient(top, #ee6d63, #e94249); background-color: #e94235;
+	border: 0; border-radius: 6px; margin: 4.5px 0; padding: 4.5px 12px;
+		-moz-border-radius: 6px;	-khtml-border-radius: 6px;	-o-border-radius: 6px; -ms-border-radius: 6px;
+	color: #000; font: 12px/18px Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+#respond .form-submit #submit:hover, input.button-primary:hover, .quiz-form #next-question:hover, .quiz-form #action-button:hover, #searchform input#searchsubmit:hover, #save-note:hover {
+	background: linear-gradient(top, #0080aa, #004d66); box-shadow: 0 0 3px #bbb;
+		background: -webkit-linear-gradient(top, #0080aa, #004d66); background: -moz-linear-gradient(top, #0080aa, #004d66); background: -o-linear-gradient(top, #0080aa, #004d66); background: -ms-linear-gradient(top, #0080aa, #004d66); background-color: #0080aa;
+		-webkit-box-shadow: 0 0 3px #bbb; -moz-box-shadow: 0 0 3px #bbb; -o-box-shadow: 0 0 3px #bbb; -ms-box-shadow: 0 0 3px #bbb;
+	border: 0;
+	color: #fff; cursor: pointer;
+}
+/* ====== Login form ====== */
+#loginform {
+	border: 2px solid #eaeaea; padding: 18px 12px; width: 336px;
+}
+#loginform .input, #entry_0 {
+	color: #413d36; font: 1.4em/1.2857em Cantarell, sans-serif;
+	border: 1px solid #dadada; padding: 4px 6px; margin: 0; width: 90%;
+}
+#loginform .input:focus {
+	border-color: #0080b7;
+	box-shadow: 0 0 2px #999;
+		-webkit-box-shadow: 0 0 2px #999; -moz-box-shadow: 0 0 2px #999; -o-box-shadow: 0 0 2px #999; -ms-box-shadow: 0 0 2px #999;
+}
+.login-remember label {
+	color: #666; font: 12px/18px Cantarell, sans-serif;
+}
+#rememberme {
+	position: relative; left: 0; top: 3px;
+}
+/* ====== Header Meta Area ====== */
+.header-utility .header-utility-wrap {
+	margin: 0 auto; width: 960px;
+	overflow: hidden;
+}
+.header-utility ul {
+	float: right;
+	width: 324px;
+}
+.header-utility ul li {
+	font: 1.2em/1.75em 'Helvetica Neue', Arial, sans-serif; text-align: right;
+	margin: 6px 0;
+}
+/* ------ Search form ------ */
+#searchform {
+	float: right;
+	margin: 0 0 0 12px; width: 246px;
+}
+.assistive-text, .recent-notes .meta {
+	position: absolute; left: -9999px !important;
+}
+#searchform input#s {
+	background: #fff;
+	border: 1px solid #787f86; border-radius: 6px; margin: 4px 0; padding: 2px 4px; width: 180px;
+		-moz-border-radius: 6px; -o-border-radius: 6px; -ms-border-radius: 6px;
+	color: #444; font: 10px Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif; line-height: 17px;
+}
+#searchform input#searchsubmit {
+	float: right;
+	font-size: 10px; font-style: normal;
+	margin: 4px 0; padding: 3px 6px; width: 44px;
+}
+/* ------ Header Logo ------ */
+#masthead #branding {
+	margin-top: 2px;
+}
+#branding a {
+	float: left; display: block;
+	height: 42px; margin: 0; width: 228px;
+}
+#branding a:hover, #branding a:focus {
+	background: url('images/plainsprite.png') 160px 2px no-repeat;
+}
+#branding .title-hidden {
+	color: #fff; font: bold 3em/.7em 'Helvetica Neue', 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif; text-transform: uppercase;
+	display: inline; float: left; z-index: 999;
+	margin-top: -22px; width: 162px;
+}
+#branding .title-in {
+	clear: left;display: inline; float: left;
+	color: #a3a3a3; font: italic 1.5em/1.5em 'OFL Sorts Mill Goudy TT', Baskerville, 'Book Antiqua', 'Hoefler Text', Garamond, Georgia, serif;
+	margin: .4em 0 1.1em 0; width: 18px;
+}
+#branding .title-plainsight {
+	color: #008fb5; font: italic 2.8em/1.4em 'OFL Sorts Mill Goudy TT', Baskerville, 'Book Antiqua', 'Hoefler Text', Garamond, Georgia, serif;
+	display: block;
+	width: 162px;
+}
+/* ====== Primary Navigation ====== */
+#masthead .menu-primary-navigation-container {
+	background: #fff;
+	border: 1px solid #dadada; border-radius: 12px; margin: 0 0 0 12px; width: 480px;
+		-moz-border-radius: 12px; -webkit-border-radius: 12px; -o-border-radius: 12px; -ms-border-radius: 12px;
+	float: right; position: relative; top: 22px; right: 0;
+}
+#masthead .menu-primary-navigation-container li {
+	float: left;
+}
+#masthead .menu-primary-navigation-container li a:link, #masthead .menu-primary-navigation-container li a:visited {
+	color: #09c; font: 1.2em/1.5em Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif; text-align: right;
+	float: left;
+	margin: 0 12px; padding: 12px 12px; width: 95px;
+}
+#masthead .menu-primary-navigation-container li a:hover, #masthead .menu-primary-navigation-container li a:focus {
+	background: url('images/plainsprite.png') 18px -720px no-repeat;
+	color: #e94235;
+	outline: none; 
+}
+#masthead .menu-primary-navigation-container li.current_page_item a, #masthead .menu-primary-navigation-container li.current-page-ancestor a {
+	background: url('images/plainsprite.png') 18px -720px no-repeat;
+	color: #787f86;
+}
+/* the primary nav Modules link */
+#masthead .menu-primary-navigation-container li.primary-nav-modules a:hover, #masthead .menu-primary-navigation-container li.primary-nav-modules a:focus {
+	background: url('images/plainsprite.png') 16px -478px no-repeat;
+}
+#masthead .menu-primary-navigation-container li.primary-nav-modules.current_page_item a, #masthead .menu-primary-navigation-container li.primary-nav-modules.current_page_ancestor a {
+	background: url('images/plainsprite.png') 16px -720px no-repeat;
+}
+/* the primary nav Blog link */
+#masthead .menu-primary-navigation-container li.primary-nav-blog a:hover, #masthead .menu-primary-navigation-container li.primary-nav-blog a:focus {
+	background: url('images/plainsprite.png') 37px -518px no-repeat;
+}
+#masthead .menu-primary-navigation-container li.primary-nav-blog.current_page_item a, #masthead .menu-primary-navigation-container li.primary-nav-blog.current_page_ancestor a {
+	background: url('images/plainsprite.png') 37px -762px no-repeat;	
+}
+/* the primary nav Course Info link */
+#masthead .menu-primary-navigation-container li.primary-nav-info a:hover, #masthead .menu-primary-navigation-container li.primary-nav-info a:focus {
+	background: url('images/plainsprite.png') 0px -598px no-repeat;
+}
+#masthead .menu-primary-navigation-container li.primary-nav-info.current_page_item a, #masthead .menu-primary-navigation-container li.primary-nav-info.current_page_ancestor a {
+	background: url('images/plainsprite.png') 0px -842px no-repeat;
+}
+ul#header-logged-in li a {
+	position: relative; right: 0; top: 3px;
+}
+/* ------ Static Front Page Primary Nav ------ */
+#masthead .menu-primary-navigation-container .static-front-page {
+	float: left;
+}
+#masthead .menu-primary-navigation-container .static-front-page a:link, #masthead .menu-primary-navigation-container .static-front-page a:visited {
+	float: left;
+	margin: 0 12px;
+	padding: 12px 12px;
+	width: 180px;
+	text-align: right;
+	font-family: Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+	font-size: 1.2em;
+}
+#masthead .menu-primary-navigation-container .static-front-page a:hover, #masthead .menu-primary-navigation-container .static-front-page a:focus {
+	background: none;
+	outline: none;
+	color: #e94235;
+}
+#masthead .menu-primary-navigation-container .static-front-page.current_page_item a, #masthead .menu-primary-navigation-container .static-front-page.current_page_ancestor a {
+	background: none;
+	color: #787f86;
+}*
+/*
+.menu-primary-navigation-container .static-front-page a:visited{
+	color: #09c;
+	font-weight:normal;
+}
+/* ------ Front Page Navigation Gallery ------ */
+/* hover thumbs adapted from: http://www.sohtanaka.com/web-design/fancy-thumbnail-hover-effect-w-jquery/ */
+#thumb-container ul.thumb {
+	float: left;
+	list-style-type: none;
+	margin: 0; padding: 0;
+}
+#thumb-container ul.thumb li {
+	float: left; position: relative;
+	margin: 0; padding: 10px 30px 30px 0;
+	width: 110px; height: 110px;
+}
+#thumb-container ul.thumb li img {
+	background: #787f86;
+	border: none; width: 100px; height: 100px; padding: 5px;
+		-ms-interpolation-mode: bicubic;
+	position: absolute; left: 0; top: 0;
+}
+#thumb-container ul.thumb li img.hover {
+	border: none; padding: 5px;
+	background: #e94325; box-shadow: 0px 0px 20px gray;
+		-webkit-box-shadow: 0px 0px 20px gray; -moz-box-shadow: 0px 0px 20px gray; -o-box-shadow: 0px 0px 20px gray; -ms-box-shadow: 0px 0px 20px gray;
+}
+/* This is the description label. Uncomment if we want it back *
+#thumb-container .zindex10 {
+	z-index: 10;
+}
+#thumb-container ul.thumb li span {
+	background: white; background: rgba(255, 255, 255, 0.9);
+	color: #e94235; font: 12px/15px Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif; text-transform: uppercase;
+	display: block; position: relative; top: 0; left: 0;
+	margin: 57px 5px; padding: 5px; height: 30px; width: 150px;
+}*/
+#thumb-container ul.thumb li .jump-url {
+	font: 12px/15px Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+	float: left; position: relative; left: -2px; bottom: -80px;
+	width: 120px;
+}
+.frontpage-widget {
+	margin: 0 0 18px 0;
+	overflow: hidden;
+}
+.frontpage-widget img {
+	background: #a7a596;
+	float: left;
+	width: 107px; height: 66px; margin: 0 12px 0 0; padding: 3px;
+}
+.frontpage-widget a:hover img {
+	background: #0099cc;
+}
+.frontpage-widget h4 {
+	color: #e94235;
+	margin-top: 0;
+}
+.frontpage-widget p {
+	margin-bottom: 0;
+}
+/* ====== Page nav (top and bottom) ====== */
+.pagenav {
+	display: block;
+	position: relative; left: 0; top: 0;
+	width: 100%; padding: 18px 0 0 0;
+}
+.pagenav a {
+	font: 1.2em/1.5em Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+	padding: 18px 0;
+}
+.pagenav a span {
+	display: none;
+}
+.pagenav-prev {
+	float: left; text-align: left;
+	width: 460px;
+}
+.pagenav-next, .pagenav-next-override {
+	float: right; text-align: right;
+	width: 460px;
+}
+.pagenav a:hover span {
+	display: inline-block;
+}
+/* ====== Breadcrumb navigation ====== */
+#breadcrumb {
+	background: #fff;
+	border: 2px solid #eaeaea; border-radius: 0 0 6px 6px; margin: 0 auto; width: 960px;
+		-webkit-border-radius: 0 0 6px 6px; -moz-border-radius: 0 0 6px 6px; -o-border-radius: 0 0 6px 6px; -ms-border-radius: 0 0 6px 6px;
+	display: block; overflow: hidden; position: relative; top: -2px; right: 0;
+}
+#breadcrumb ul {
+	list-style-type: none;
+	margin: 9px 10px;
+	overflow: hidden;
+}
+#breadcrumb ul li {
+	float: left;
+	font: 1.2em/1.5em Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif; letter-spacing: -1px; text-transform: uppercase;
+}
+#breadcrumb ul li span {
+	margin: 0 6px;
+}
+#breadcrumb .home a:link, #breadcrumb .home a:visited {
+	background: url('images/home-sprite.png') 0 0 no-repeat;
+	display: block;
+	height: 16px; width: 18px;
+}
+#breadcrumb .home a:hover, #breadcrumb .home a:focus {
+	background-position: 0 -17px;
+}
+/* ====== Notes forms ====== */
+#titlediv label {
+	color: #777; font: 1.4em/1.5em Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+	float: left;
+	margin: 0 0 .75em 0; width: 36px;
+}
+input#title {
+	color: #555; font: 1.4em/1.5em Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+	border: 1px solid #a0a7ae; border-radius: 6px; margin: 0 0 .75em 0; width: 214px;
+		-webkit-border-radius: 6px; -moz-border-radius: 6px; -o-border-radius: 6px; -ms-border-radius: 6px;
+	float: left;
+}
+#psnotesform textarea {
+	background: #e2e6cc; background: rgba(255, 255, 255, 0.5);
+	color: #444; font: 1.4em/1.5em Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+	border: 1px dashed #a0a7ae; margin-bottom: 6px; padding: 4px; width: 308px; height: 140px;
+}
+#psnotesform textarea:focus {
+	border: 1px solid #0080b7;
+	box-shadow: 0 0 2px #ccc;
+		-webkit-box-shadow: 0 0 2px #ccc; -moz-box-shadow: 0 0 2px #ccc; -o-box-shadow: 0 0 2px #ccc; -ms-box-shadow: 0 0 2px #ccc;
+}
+#psnotesform span {
+	color: #a0a7ae; font: 12px/13px Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+#psnotesform .save-draft {
+	margin: 0;
+}
+#psnotesform .save-draft #save-note {
+	float: left;
+	background: #c5c9cd; background: linear-gradient(top, #e0e2e5, #c5c9cd);
+		background: -webkit-linear-gradient(top, #e0e2e5, #c5c9cd); background: -moz-linear-gradient(top, #e0e2e5, #c5c9cd); background: -o-linear-gradient(top, #e0e2e5, #c5c9cd); background: -ms-linear-gradient(top, #e0e2e5, #c5c9cd);
+	margin-right: 10px;
+}
+#psnotesform .save-draft #save-note:hover {
+	background-color: #444; background: #a0a7ae;	background: linear-gradient(top, #5b636b, #4c5259);
+		background: -webkit-linear-gradient(top, #5b636b, #4c5259); background: -moz-linear-gradient(top, #5b636b, #4c5259); background: -o-linear-gradient(top, #5b636b, #4c5259); background: -ms-linear-gradient(top, #5b636b, #4c5259);
+}
+.section-wrap #psnotesform #note-textarea {
+	clear: both;
+	width: 570px;
+}
+#psnoteform .error, .error {
+	color: #c33; font-weight: bold;
+	margin: 0 0 0 1em;
+}
+.updated {
+	color: #032;
+	background: #7bc;
+	border: 1px solid #09c; border-radius: 3px; margin: 9px 0;
+		-moz-border-radius: 3px; -khtml-border-radius: 3px; -o-border-radius: 3px; -webkit-box-shadow: 2px 2px 3px #eee;
+}
+.updated p {
+	margin: 9px 10px 3px;
+}
+/* ====== Colorbox content ====== */
+.colorbox-inline-content {
+	margin: 18px 12px;
+}
+/* ====== TABLES ====== */
+table {
+	font: 14px/18px Cantarell, 'Lucida Sans', Verdana, sans-serif;
+	margin: 18px auto; width: 100%;
+}
+table p {
+	font-size: 14px;
+}
+caption {
+	font-size: 16px; font-weight: bold; text-align: center;
+	padding: 3px;
+}
+thead th {
+	color: #222;
+	padding: 9px 12px;
+}
+tbody th {
+	background: none repeat scroll 0 0 #007399;
+	border-bottom: 1px solid #e2e6cc; padding: 0 8px 0 0;
+	color: #fff; text-align: right;
+}
+tbody tr td {
+	background: #f3f3ea;
+	border-bottom: 1px solid #e2e6cc; padding: 9px 12px;
+}
+tbody ul li {
+	font: 14px/18px Cantarell, 'Lucida Sans', Verdana, sans-serif; list-style-type: disc;
+	margin-left: 24px; width: 220px;
+}
+/* ------------------------------------------------------------
+PAGES AND SINGLES
+------------------------------------------------------------ */
+/* ====== Module Splash Page ====== */
+#module-splash-nav ul {
+	margin: 0;
+}
+#module-splash-nav ul li {
+	float: left;
+	list-style-type: none;
+}
+#module-splash-nav img {
+	width: 160px; height: 160px;
+}
+#module-splash-nav ul li a {
+	border: 3px solid #a7a596; width: 160px; height: 160px; margin: 9px 10px 0 0;
+	float: left;
+}
+#module-splash-nav ul li a:hover {
+	border: 3px solid #e94235;
+}
+#module-splash-nav ul li a span, #module-splash-nav .jump-url {
+	position: absolute; left: -9999px !important;
+}
+/* === Delete previous and Un-comment if we want labels back === 
+#module-splash-nav ul li a span {
+	background: #fff; background: rgba(255, 255, 255, 0.9);
+	color: #e94235; font: 12px/15px Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif; text-transform: uppercase;
+	display: block; position: relative; left: 0; top: -76px;
+	height: 30px; margin: 18px 0; padding: 5px; width: 130px;
+}
+#module-splash-nav ul li a:hover span {
+	background: #fff;
+}*/
+#module-splash-nav ul li a.jump-url {
+	border: 0; height: 18px; margin: 9px 0 -27px 0;
+	clear: both;
+}
+/* ====== Syllabus page ===== */
+.top {
+	margin-bottom: 18px; 
+	overflow: hidden;
+}
+.credit-info {
+	border-top: 1px dotted #09c; border-bottom: 1px dotted #09c;
+	margin-top: 22px; padding-left: 40px; width: 240px;
+}
+.credit-info p {
+	color: #787f86; font-style: italic;
+	margin-left: 30px;
+}
+.big {
+	color: #787f86; font-size: 60px; font-style: normal; line-height: 60px;
+	display: block;
+	padding: 18px 0 0 40px;
+}
+.instructor-info p, .regis-info p {
+	font-size: 10px; line-height: 12px;
+}
+.course-schedule {
+	width: 640px;
+}
+/* ====== Slideshow (Behind the Object pages) ====== */
+#slide-container {
+	float: left;
+	width: 580px;
+}
+#slide-container img {
+	width: 580px; height: 358px; margin: 0 0 2px 0;
+}
+#module-slideshow #slide-container a {
+	outline: none;
+}
+/* ---- Slideshow navigation (the JQuery toggles) ---- */
+#content-sidebar #slideshow-nav #slide-toggler {
+	margin: 0;
+}
+#slideshow-nav #slide-toggler li {
+	float: left;
+	line-height: 0;
+	margin: 0 6px 6px 0;
+}
+/* hidden by default; JQuery removes this class to reveal */
+.one-column-full #module-slideshow .no-script, .one-column-standard #module-slideshow .no-script {
+	display: none;
+}
+#slide-toggler li a:link img, #slide-toggler li a:visited img {
+	border: 4px solid #fff; width: 54px; height: 54px;
+}
+#slide-toggler li.visited a img {
+	border: 4px solid #a7a596; width: 54px; height: 54px;
+}
+#slideshow-nav #slide-toggler li a:hover img, #slideshow-nav #slide-toggler li a:active img, #slideshow-nav #slide-toggler li a:focus img {
+	border: 4px solid #e94235; outline: none;
+}
+#slide-toggler li.current_page_item a img {
+	border: 4px solid #e94235; outline: none;
+}
+a:link .slide-helper, a:visited .slide-helper {
+	background: #333; background: rgba(0, 0, 0, 0.6);
+	border-radius: 12px 0 0 0; padding: 5px 0; width: 100px;
+		-webkit-border-radius: 12px 0 0 0; -moz-border-radius: 12px 0 0 0; -o-border-radius: 12px 0 0 0; -ms-border-radius: 12px 0 0 0;
+	color: #fff; font: 12px/15px Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif; text-align: center;
+	float: right; position: relative; left: 0; top: -32px;
+}
+a:hover .slide-helper, a:active .slide-helper {
+	background: #e94235;
+}
+/* ------ Module page section wrap ------ */
+.section-wrap {
+	border: 1px solid #a7a596; border-radius: 6px; margin: 0 0 18px 0; padding: 18px 12px 0 12px;
+		-moz-border-radius: 6px; -webkit-border-radius: 6px; -o-border-radius: 6px; -ms-border-radius: 6px;
+}
+.section-wrap h4 {
+	margin: .5833em 0;
+}
+/* ------ Section-wrapped Note display ------ */
+.note {
+	width: 100%;
+}
+.note img.avatar, #author-avatar img.avatar, .avatar {
+	border-radius: 2px; margin: 0 12px 0 0; width: 50px; height: 50px;
+		-moz-border-radius: 2px; -webkit-border-radius: 2px; -o-border-radius: 2px; -ms-border-radius: 2px;
+	float: left;
+}
+.note-sub {
+	font-style: italic;
+	font-size: 1.2em;
+}
+.note-meta .fn, .note-meta a {
+	font-style: normal;
+}
+.note-meta .pub-date {
+	color: #e9A235; font-family: Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif; font-style: normal; text-transform: uppercase;
+}
+.note-content {
+	margin-top: 18px;
+}
+/* ------ Notes page ------ */
+.notes-page-section h2 a {
+	background: url('images/plus-minus.gif') 0 0 no-repeat;
+	padding: 0 0 0 36px;
+}
+.notes-page-section h2 a.hover {
+	background: url('images/plus-minus.gif') 0px -36px no-repeat;
+}
+.notes-page-section h2 a.close {
+	background: url('images/plus-minus.gif') 0px -72px no-repeat;
+}
+.notes-page-section h2 a.close.hover {
+	background: url('images/plus-minus.gif') 0px -108px no-repeat;
+}
+/* ====== Author (archive) pages ====== */
+#author-info {
+	overflow: hidden;
+	margin-bottom: 18px;
+}
+#author-description {
+	border-top: 1px dotted #973428; border-bottom: 1px dotted #973428;
+	padding: 18px 10px; width: 60%;
+}
+#content #author-description p {
+	font-size: 1.4em; line-height: 1.7em;
+	margin-bottom: 0;
+}
+#author-extra p {
+	margin: 0;
+}
+#author-extra p span {
+	color: #2d2b28; font-size: 1.2em; line-height: 1.5em; text-transform: none;
+}
+/* ====== Single Posts ====== */
+#content .entry-utility {
+	clear: both; display: block;
+	width: 100%;
+}
+#content #nav-below {
+	overflow: hidden;
+}
+#content #nav-above li, #content #nav-below li.nav-previous {
+	float: left;
+	margin: 9px 12px; width: 315px;
+}
+#content #nav-above li, #content #nav-below li.nav-next {
+	float: right;
+	margin: 9px 12px; width: 315px; text-align: right;
+}
+/* ------ Single post sidebar ------ */
+#content-sidebar ul.navigation {
+	font-size: inherit; line-height: inherit;
+	margin: 24px 12px;
+}
+/* ------ Connections essay attribution ------ */
+.author-info {
+	border: 1px solid #a7a596; border-radius: 6px; padding: 12px 12px 6px; width: 320px;
+		-moz-border-radius: 6px; -webkit-border-radius: 6px; -o-border-radius: 6px; -ms-border-radius: 6px;
+}
+.author-info img {
+	background: white;
+	float: left;
+	margin-right: 12px; padding: 6px; width: 88px; height: 88px;
+}
+.author-info br {
+	display: none;
+}
+#entry-author-info #author-avatar, #entry-author-info #author-description {
+	margin: 0 12px 24px 12px;
+}
+#entry-author-info #author-link {
+	display: block;
+	text-align: right;
+}
+/* ------ Comment Box ------ */
+#comments .commentlist, #content .recent-notes {
+	margin: 0;
+}
+#comments .even, #comments .odd {
+	background: #eaeaea;
+	border: 1px solid #a0a7ae; padding: 1px 10px 0;
+}
+#comments .odd {
+	background: #fff;
+}
+#comments .comment {
+	color: #787f86; list-style-type: none;
+	margin-bottom: 18px;
+}
+#comments .children {
+	margin: 0;
+}
+.comment-content p {
+	margin-bottom: 0;
+}
+.comment-meta .vcard, .comment-reply-link {
+	color: #e94235; font: 12px/18px Nobile, 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif; letter-spacing: 1px; text-transform: uppercase;
+	margin: 9px 0;
+}
+/* ------ Response Form ------ */
+#comments #respond {
+	border: 1px solid #b1bfd2;
+}
+#respond #reply-title {
+	border-bottom: 1px solid #b1bfd2; margin: 24px 12px; padding-bottom: 4px;
+	font-size: 21px;
+}
+#respond #commentform {
+	margin: 0 12px;
+}
+#respond .comment-form-comment textarea {
+	border: 2px solid #e5e5e5; width: 83%;
+	font-size: 1em;
+}
+#respond .form-allowed-tags {
+	color: #666;
+	width: 84%;
+}
+/* ====== Quiz ('quizzin' plugin) ====== */
+#content #quiz form {
+	margin: 0 auto; margin-top: -18px; width: 552px;
+}
+#content .quiz-form {
+	margin: 0 0 18px 0; padding: 0;
+}
+.quiz-form .quizzing-question {
+	clear: both;
+}
+.quiz-form .answer {
+	font: 15px/18px 'OFL Sorts Mill Goudy TT', Baskerville, 'Book Antiqua', 'Hoefler Text', Garamond, Georgia, serif;
+} 
+.quiz-form .quizzin-question input.answer {
+	clear: both; display: block; float: left;
+	margin: 12px 0; width: 24px;
+}
+.quiz-form .quizzin-question label.answer span {
+	border-radius: 3px; margin: 6px 0 0; padding: 6px 5px 3px; width: 90%;
+		-webkit-border-radius: 3px; -moz-border-radius: 3px; -o-border-radius: 3px; -ms-border-radius: 3px;
+	display: block; float: left;
+}
+input[type="radio"]:checked+label span { 
+	background: #c9ddf2;
+	border-radius: 3px; padding: 4.5px 6px;
+		-webkit-border-radius: 3px; -moz-border-radius: 3px; -o-border-radius: 3px; -ms-border-radius: 3px;
+}
+.quiz-area br {
+	clear: both; display: block; overflow: hidden;
+}
+.show-question {
+	border: 1px solid #a7a596 !important; margin: 9px 0; padding: 9px 12px; 
+}
+.show-question .show-question-content, .quiz-form .question-content {
+	color: #2d2b28; font: bold 1.5em/1.7em 'OFL Sorts Mill Goudy TT', Baskerville, 'Book Antiqua', 'Hoefler Text', Garamond, Georgia, serif;
+	margin: 0.9em 0 0.8em 0;
+}
+.show-question li.answer {
+	border-radius: 3px; padding: 4.5px 6px;
+		-webkit-border-radius: 3px; -moz-border-radius: 3px; -o-border-radius: 3px; -ms-border-radius: 3px;
+}
+.show-question li.user-answer {
+	background-color: #fbb;
+}
+.show-question li.correct-answer {
+	background-color: #94d674;
+}
+/* ====== ColorBox style tweaks ====== */
+#cboxTitle {
+	color: #222; font-size: 14px;
+}
