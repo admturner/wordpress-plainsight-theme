@@ -14,16 +14,32 @@
 		<h4><?php the_title(); // pulls title from front page ?></h4>
 		<ul>
 			<li class="syllabus"><a href="<?php bloginfo( 'url' ); ?>/syllabus/">:: Syllabus</a></li>
-			<?php 
-				global $blog_id;
-				if ( 2 == $blog_id ) { ?>
-					<li><a href="<?php bloginfo( 'url' ); ?>/project-guidelines/">:: Project Guidelines</li>
-					<li><a href="<?php bloginfo( 'url' ); ?>/project-guidelines/research-tips/">:: Research Tips</li>
-					<li><a href="<?php bloginfo( 'url' ); ?>/project-guidelines/citations-guide/">:: Citation Guide</li>
-				<?php }
-			?>
 			<li class="login">:: <?php wp_loginout( get_permalink() ); ?></li>
 		</ul>
+		<?php 
+				if ( is_user_logged_in() ) {
+					global $blog_id;
+					if ( 2 == $blog_id ) { ?>
+						<ul>
+							<li><a href="<?php bloginfo( 'url' ); ?>/project-guidelines/">:: Project Guidelines</a></li>
+							<li><a href="<?php bloginfo( 'url' ); ?>/project-guidelines/research-tips/">:: Research Tips</a></li>
+							<li><a href="<?php bloginfo( 'url' ); ?>/project-guidelines/citations-guide/">:: Citation Guide</a></li>
+						</ul>
+					<?php }
+					
+					// Upcoming events pull from ScholarPress Courseware plugin schedule entries ?>
+					<h5><strong>Coming Up</strong></h5>
+					
+					<?php $events = sp_courseware_schedule_get_upcoming_entries( 1 );					
+					foreach ( $events as $event ) {
+						?><h6>
+							<span class="cal-title"><?php echo $event->schedule_title; ?></span><br />
+							<span class="cal-date"><?php echo date('F d, Y', strtotime($event->schedule_date)); ?></span><br />
+							<span class="cal-place"><?php echo $event->schedule_location; ?></span><br />
+						</h6><?php 
+					}
+					
+				} // end is_user_logged_in() ?>
 	<?php else : 
 		// If its the Main Front Page, display a different menu ?>
 		<h4>Hidden in Plain Sight Program Options</h4>
